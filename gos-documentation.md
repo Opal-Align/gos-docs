@@ -209,61 +209,99 @@ Each category allows your team to prioritize outreach based on the practice's op
 
 ## Overview
 
-Collect organizes all patient balance scenarios into distinct views so your team can efficiently identify outstanding balances, prioritize follow-up, and ensure no revenue is missed.
+Collect organizes outstanding patient balances into focused views so your team can efficiently identify, prioritize, and follow up on revenue. Navigate between views using the tabs at the top of the screen.
 
 ## Views
 
 ### Missed Collections
 Patients who had an appointment yesterday and left with an unpaid balance. These are high-priority — timely outreach significantly increases the likelihood of successful collection.
 
-### A/R – with Appointment
+### A/R - with Appt.
 Patients who have an upcoming appointment and an outstanding balance. An ideal opportunity to resolve the balance before or during their scheduled visit.
 
-### A/R – without Appointment
+### A/R - without Appt.
 Patients who owe a balance but have no future appointment scheduled. Requires proactive outreach to resolve the balance and, when appropriate, schedule continued care.
 
-### Automation Queue
-Patients eligible to receive an automated outreach message. The system will contact these patients according to your configured communication schedule.
+### Problem Claims
+Insurance claims that require immediate attention due to submission issues, payer rejections, missing documentation, or unsupported claim types. This view is enabled based on your practice configuration.
 
-### Omission Queue
-Patients that have been manually removed from automation. These patients will not receive automated messages unless moved back to the Automation Queue.
+---
 
-### Collections Queue
-Patients whose accounts have progressed through all outreach and escalation steps and are now eligible to be submitted to an external collections process. L4 users review and finalize this queue.
+## Role-Based Views
+
+Within each Collect view, the patient list is organized into sections based on your user level:
+
+| Section | Visible to |
+|---------|------------|
+| Corporate | L3 and above |
+| Office | L2, L3 and above |
+| All Patients | L1, L2, L3 |
 
 ---
 
 ## Table Columns
 
-All Collect views share the following columns:
+Each view has specific columns tailored to its workflow.
 
-| Column | Behavior |
-|--------|----------|
-| Opalescence Points | Sortable — higher score = higher priority |
-| Guarantor | Responsible party for the account |
-| Patient | Searchable by name |
-| Provider | Assigned provider |
-| Balance | Sortable |
-| Source | Sortable — click to open full task history |
-| Actions | Message, Call, Override, Reassign |
-
----
-
-## Problem Claims
-
-### Overview
-The Problem Claims view highlights insurance claims that require immediate attention due to submission issues, payer rejections, missing documentation, or unsupported claim types.
-
-### Columns
+### Missed Collections
 
 | Column | Description |
 |--------|-------------|
-| Claim Info | Claim amount and submission date — use to prioritize older or high-value claims |
-| Problem | The type of issue (e.g., NOT SUPPORTED — requires manual intervention) |
-| Actions | Resubmit, Call, Override, Reassign |
+| OPALescence | Sortable — higher score = higher priority |
+| Guarantor | Responsible party for the account |
+| Patient | Searchable by name |
+| Provider | Assigned provider |
+| Collected at Last Appt. | Amount collected during the most recent visit |
+| Appointment | Sortable — most recent appointment time and last date of service |
+| Patient Balance | Sortable — outstanding amount owed |
+| History | Sortable — click to view outreach progress and full task history |
+| Action | Message, Call, Override, Reassign |
 
-### Explanation of Benefits (EOB)
-Each Problem Claim includes an EOB — a document issued by the insurance payer detailing how the claim was processed. It shows:
+### A/R - with Appt.
+
+| Column | Description |
+|--------|-------------|
+| OPALescence | Sortable — higher score = higher priority |
+| Guarantor | Responsible party for the account |
+| Patient | Searchable by name |
+| Provider | Assigned provider |
+| Last Appt. | Filterable by date range — most recent appointment date |
+| Next Appt. | Filterable — upcoming scheduled appointment date |
+| Patient Balance | Sortable — outstanding amount owed |
+| History | Sortable — click to view outreach progress and full task history |
+| Action | Message, Call, Override, Reassign |
+
+### A/R - without Appt.
+
+| Column | Description |
+|--------|-------------|
+| OPALescence | Sortable — higher score = higher priority |
+| Guarantor | Responsible party for the account |
+| Patient | Searchable by name |
+| Provider | Assigned provider |
+| Last Appt. | Filterable by date range — most recent appointment date |
+| Patient Balance | Sortable — outstanding amount owed |
+| History | Sortable — click to view outreach progress and full task history |
+| Action | Message, Call, Override, Reassign |
+
+### Problem Claims
+
+| Column | Description |
+|--------|-------------|
+| OPALescence | Sortable — higher score = higher priority |
+| Guarantor | Responsible party for the account |
+| Patient | Searchable — includes a button to open the EOB document |
+| Payor | The insurance company associated with the claim |
+| Claim Info | Sortable — claim amount and original submission date |
+| Problem | Filterable — type of issue flagging the claim |
+| Source | Sortable — click to open full task history |
+| Action | Resubmit, Call, Override, Reassign |
+
+---
+
+## Problem Claims — Explanation of Benefits (EOB)
+
+Each Problem Claim includes an EOB — a document issued by the insurance payer detailing how the claim was processed. Click the document icon next to the patient name to open it. The EOB shows:
 
 - Services rendered
 - Amount billed by the provider
@@ -276,12 +314,14 @@ The EOB is your primary source of truth for understanding claim outcomes, reconc
 
 ## Queue Management
 
+Collect patients can be moved between queues using the Override action button. Available actions include:
+
 | Action | Description |
 |--------|-------------|
-| Move to Omission Queue | Exempt a patient from automation |
-| Move to Automation Queue | Return an omitted patient to automation |
-| Move to Collections Queue | Flag patient for collections review |
-| Move to Mailer | Send to USPS mail queue |
+| Move to Omission Queue | Exempt a patient from automated outreach — they will not receive automated messages |
+| Move to Automation Queue | Return an omitted patient back to the automated outreach schedule |
+| Move to Collections Queue | Flag a patient for external collections review — reviewed and finalized by L4 users |
+| Move to Mailer | Send a patient to the USPS mail queue |
 
 ---
 
