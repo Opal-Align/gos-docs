@@ -67,6 +67,8 @@ In addition to the four main tabs, the top bar includes:
 
 ---
 
+---
+
 # Relay
 
 ## Overview
@@ -91,49 +93,6 @@ Real-time two-way SMS inbox for patient conversations. You can send and receive 
 
 ---
 
-### Appointments
-
-Lists upcoming patient appointments with insurance eligibility details. Use this view to verify eligibility, review plan information, and prepare for each appointment in advance.
-
-> This tab is enabled based on your practice configuration.
-
-**Columns:**
-
-| Column | Description |
-|--------|-------------|
-| Guarantor | Responsible party and phone number |
-| Patient | Searchable — includes a button to open the Patient Slip (VOB) |
-| Appointment | Sortable — appointment date and time |
-| Type | Appointment type |
-| Group Plan | Insurance group plan name and number |
-| Payer & ID | Insurance payer name and payer ID |
-| Eligibility | Filterable — status badge: Verified, Not Covered, Action Required, Unresolved |
-| Action | Message (SMS), Call (patient or insurance) |
-
-**Filter options:** 1 Week, 2 Weeks, 1 Month, 2 Months
-
-#### Patient Slip (Verification of Benefits)
-
-Clicking the document icon next to a patient's name opens their Patient Slip — a comprehensive, auto-generated summary of their account. The icon turns green once the VOB has been loaded.
-
-The Patient Slip includes:
-
-| Section | Contents |
-|---------|----------|
-| Patient Information | Demographic and contact details |
-| Opal Alerts | System flags for outstanding tasks or missing information |
-| Family Members | Linked household members |
-| Guarantor Information | Responsible party for financial obligations |
-| Billing Information | Last statement, last payment, current balance, aging buckets (>30 / >60 / >90 / >120 days), estimated patient and insurance portions |
-| Appointment Procedure Detail | Procedures for the current appointment |
-| Treatment Plan | Planned future treatments on record |
-| Insurance Information | Plan name, group number, payer ID, address, phone, fee schedule, effective dates |
-| Coverage Summary | Yearly max, deductibles, waiting periods, missing tooth clause, coordination of benefits |
-| General Benefit Details | Per-procedure coverage: code, description, frequency limits, coverage %, age limits, historical usage |
-| Specialty Benefit Details | Endodontics, Periodontics, Oral Surgery, Orthodontics |
-
----
-
 ### Missing Contacts
 
 Patients without a valid phone number or email address appear here. These patients cannot receive automated outreach until their contact information is updated in your Practice Management System (PMS).
@@ -153,9 +112,9 @@ Patients without a valid phone number or email address appear here. These patien
 
 ---
 
-### Write off
+### Write Off
 
-The Collections Queue for L4 users. Shows accounts that have completed all outreach steps and are ready for write-off review.
+The Collections Queue for write-off review. Shows accounts that have completed all outreach steps and are ready for write-off review.
 
 > **Visible to L4 users only.**
 
@@ -197,22 +156,13 @@ Shows all patients currently in the automated outreach sequence — either sched
 
 ---
 
-### Mail Queue
+### Schedule Requests
 
-Shows all patients who have been queued for a USPS physical mailer. Tracks the status of each mail item from creation through delivery.
+> This tab is enabled based on your practice configuration.
 
-**Columns:**
+Displays incoming appointment schedule requests from patients. Use this view to review and manage requests submitted through patient-facing outreach.
 
-| Column | Description |
-|--------|-------------|
-| Patient | Name |
-| Contact | Phone and email |
-| Amount | Sortable — outstanding balance |
-| Last Appt. | Sortable — most recent appointment |
-| Template | Template name and message type used |
-| Status | Pending, Sent, Failed, or Skipped |
-| Created | Sortable — date and time the mail record was created |
-| Created By | The user who triggered the mailer (truncated email) |
+---
 
 ---
 
@@ -280,6 +230,8 @@ Each Schedule view is organized into sections based on your user level:
 
 ---
 
+---
+
 # Produce
 
 ## Overview
@@ -329,6 +281,8 @@ Both Produce views share the same columns:
 | Last Appt. | Sortable — most recent appointment date, with days-ago indicator |
 | History | Sortable — click to view outreach progress and full task history |
 | Action | Message, Call, Override, Reassign |
+
+---
 
 ---
 
@@ -452,6 +406,8 @@ Collect patients can be moved between queues using the Override action button. A
 
 ---
 
+---
+
 # Guided Workflows
 
 ## Overview
@@ -536,6 +492,8 @@ Unread message badges appear directly on the message button in each patient row.
 
 ---
 
+---
+
 # Opalescence — Scoring & Gamification
 
 ## What is Opalescence?
@@ -580,6 +538,8 @@ Leaderboards update in real time as tasks are completed. They encourage consiste
 ## OPAL Rush
 
 Displayed on the Home screen. Surfaces your practice's highest-value opportunities in real time — the top patients with the greatest impact if addressed today. Up to 3 patients are shown.
+
+---
 
 ---
 
