@@ -69,6 +69,8 @@ In addition to the four main tabs, the top bar includes:
 
 ---
 
+---
+
 # Relay
 
 ## Overview
@@ -166,6 +168,8 @@ Displays incoming appointment schedule requests from patients. Use this view to 
 
 ---
 
+---
+
 # Schedule
 
 ## Overview
@@ -174,9 +178,13 @@ The Schedule tab gives your team visibility into patients who need follow-up to 
 
 ## Subtabs
 
+### VOB
+
+An appointments view available to practices with the appointments feature enabled. This is the default view when you open the Schedule tab.
+
 ### No Reappointments
 
-Patients who do not have a future appointment scheduled and need to be reappointed. This is the default view when you open the Schedule tab.
+Patients who do not have a future appointment scheduled and need to be reappointed.
 
 ### No Shows
 
@@ -230,8 +238,6 @@ Each Schedule view is organized into sections based on your user level:
 
 ---
 
----
-
 # Produce
 
 ## Overview
@@ -281,6 +287,8 @@ Both Produce views share the same columns:
 | Last Appt. | Sortable — most recent appointment date, with days-ago indicator |
 | History | Sortable — click to view outreach progress and full task history |
 | Action | Message, Call, Override, Reassign |
+
+---
 
 ---
 
@@ -408,6 +416,8 @@ Collect patients can be moved between queues using the Override action button. A
 
 ---
 
+---
+
 # Guided Workflows
 
 ## Overview
@@ -494,6 +504,8 @@ Unread message badges appear directly on the message button in each patient row.
 
 ---
 
+---
+
 # Opalescence — Scoring & Gamification
 
 ## What is Opalescence?
@@ -538,6 +550,8 @@ Leaderboards update in real time as tasks are completed. They encourage consiste
 ## OPAL Rush
 
 Displayed on the Home screen. Surfaces your practice's highest-value opportunities in real time — the top patients with the greatest impact if addressed today. Up to 3 patients are shown.
+
+---
 
 ---
 
