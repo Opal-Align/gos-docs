@@ -33,9 +33,32 @@ Each tab represents a key area of your practice's daily workflow. Your access le
 | Level | Role | Description |
 |-------|------|-------------|
 | L1 | Staff | Day-to-day task completion |
-| L2 | Senior Staff | Can escalate and reassign tasks |
-| L3 | Practice Manager | Manages multiple practices, access to Settings |
-| L4 | Revenue Cycle Manager | Highest authority, manages Collections Queue |
+| L2 | Senior Staff / Front Desk | Can escalate, reassign tasks, and manage users |
+| L3 | Practice Manager | Manages multiple practices, full access to Settings |
+| L4 | Revenue Cycle Manager | Highest authority — home screen shows Collections Queue directly |
+
+## Home Screen (L1–L3)
+
+After logging in, L1–L3 users see a dashboard with:
+
+- **KPI Summary** — live counts for Relay, Collect, Produce, and Schedule activity
+- **OPALescence Points** — your personal score from completed tasks
+- **Current Streak** — consecutive days with task activity, plus your all-time best
+- **MTD Trend** — your month-to-date OPALescence total
+- **Leaderboards** — Practice and Global rankings, updated in real time
+
+> **L4 users** are taken directly to the Collections Queue on login — no dashboard.
+
+## Top Navigation Bar
+
+In addition to the four main tabs, the top bar includes:
+
+| Element | Description |
+|---------|-------------|
+| Patient Search | Search any patient by name across all screens |
+| Practice Selector | Switch between practices without logging out (appears when you manage more than one practice) |
+| Settings (gear icon) | Access Settings (L2 can access Users; L3 accesses all settings) |
+| Profile Avatar | Shows your name and role on hover |
 
 ## Support
 
@@ -48,29 +71,148 @@ Each tab represents a key area of your practice's daily workflow. Your access le
 
 ## Overview
 
-Relay is your team's communication hub. It centralizes all patient messaging activity in one place so nothing falls through the cracks.
+Relay is your team's communication hub. It centralizes all patient messaging, eligibility verification, and outreach tracking in one place so nothing falls through the cracks.
 
 ## Subtabs
 
 ### Message Inbox
 
-Real-time SMS inbox for two-way patient conversations. Reply directly to patient messages from this view.
+Real-time two-way SMS inbox for patient conversations. You can send and receive messages, use pre-loaded templates, and take action on a patient's account without leaving the inbox.
 
-### Pending Outreach
+**Columns:**
+- Patient name and contact information
+- Section and subsection (Collect or Produce) the patient belongs to
+- Unread message badge when new messages arrive
 
-Lists patients who are next in line to receive an automated outreach message. Shows what message they will receive and when.
+**Features:**
+- Filter conversations by section (Collect or Produce)
+- Search for a patient by name
+- Send a message, make a call, or override/reassign from within the inbox
 
-### Contact History
+---
 
-A log of all patients who have already been contacted, showing when they were reached and at which step in the outreach lifecycle.
+### Appointments
 
-### Mail Queue
+Lists upcoming patient appointments with insurance eligibility details. Use this view to verify eligibility, review plan information, and prepare for each appointment in advance.
 
-Lists patients scheduled to receive a physical mailed letter from your practice. Shows the template selected and the expected send date.
+> This tab is enabled based on your practice configuration.
+
+**Columns:**
+
+| Column | Description |
+|--------|-------------|
+| Guarantor | Responsible party and phone number |
+| Patient | Searchable — includes a button to open the Patient Slip (VOB) |
+| Appointment | Sortable — appointment date and time |
+| Type | Appointment type |
+| Group Plan | Insurance group plan name and number |
+| Payer & ID | Insurance payer name and payer ID |
+| Eligibility | Filterable — status badge: Verified, Not Covered, Action Required, Unresolved |
+| Action | Message (SMS), Call (patient or insurance) |
+
+**Filter options:** 1 Week, 2 Weeks, 1 Month, 2 Months
+
+#### Patient Slip (Verification of Benefits)
+
+Clicking the document icon next to a patient's name opens their Patient Slip — a comprehensive, auto-generated summary of their account. The icon turns green once the VOB has been loaded.
+
+The Patient Slip includes:
+
+| Section | Contents |
+|---------|----------|
+| Patient Information | Demographic and contact details |
+| Opal Alerts | System flags for outstanding tasks or missing information |
+| Family Members | Linked household members |
+| Guarantor Information | Responsible party for financial obligations |
+| Billing Information | Last statement, last payment, current balance, aging buckets (>30 / >60 / >90 / >120 days), estimated patient and insurance portions |
+| Appointment Procedure Detail | Procedures for the current appointment |
+| Treatment Plan | Planned future treatments on record |
+| Insurance Information | Plan name, group number, payer ID, address, phone, fee schedule, effective dates |
+| Coverage Summary | Yearly max, deductibles, waiting periods, missing tooth clause, coordination of benefits |
+| General Benefit Details | Per-procedure coverage: code, description, frequency limits, coverage %, age limits, historical usage |
+| Specialty Benefit Details | Endodontics, Periodontics, Oral Surgery, Orthodontics |
+
+---
 
 ### Missing Contacts
 
-Patients without a valid phone number or email address appear here. These patients cannot be reached through automated outreach until their contact information is updated in your Practice Management System (PMS).
+Patients without a valid phone number or email address appear here. These patients cannot receive automated outreach until their contact information is updated in your Practice Management System (PMS).
+
+**Filter options:** All Types, Missing Phone, Missing Email, Missing Both
+
+**Columns:**
+
+| Column | Description |
+|--------|-------------|
+| Patient | Searchable by name |
+| Contact | Phone number and email on file |
+| Address | Mailing address |
+| Amount | Sortable — outstanding balance |
+| Last Appt. | Sortable — most recent appointment date |
+| Missing | Badge showing what contact info is missing (Phone, Email, or Both) |
+
+---
+
+### Write off
+
+The Collections Queue for L4 users. Shows accounts that have completed all outreach steps and are ready for write-off review.
+
+> **Visible to L4 users only.**
+
+A **Download CSV** button at the top exports the full list with guarantor details, patient info, addresses, balances, and SSN/chart numbers for external collections processing.
+
+**Columns:**
+
+| Column | Description |
+|--------|-------------|
+| Guarantor | Name and phone number |
+| Patient | Name and date of birth |
+| Practice | Practice name (searchable — L4 only) |
+| Last Appt. | Filterable by date range |
+| Patient Balance | Sortable |
+| History | Sortable — outreach progress tracker |
+| Action | Message, Call, Override, Reassign (visible to L4) |
+| Write Off | Checkbox to confirm write-off — triggers a confirmation dialog before finalizing |
+
+---
+
+### Lifecycle
+
+Shows all patients currently in the automated outreach sequence — either scheduled to receive a future message or waiting for their next step.
+
+**Filter options:** Section (Collect / Produce), Message Type (SMS, Email, Mail, Call)
+
+**Columns:**
+
+| Column | Description |
+|--------|-------------|
+| Patient | Searchable by name |
+| Contact | Phone number and email |
+| Amount | Sortable — outstanding balance |
+| Last Appt. | Sortable — most recent appointment |
+| Last Sent | Date the most recent automated message was sent |
+| History | Outreach progress tracker |
+| Next | The type of the next scheduled outreach step (SMS, Email, Mail, Call) |
+| Status | Delivery status of the last sent message |
+
+---
+
+### Mail Queue
+
+Shows all patients who have been queued for a USPS physical mailer. Tracks the status of each mail item from creation through delivery.
+
+**Columns:**
+
+| Column | Description |
+|--------|-------------|
+| Patient | Name |
+| Contact | Phone and email |
+| Amount | Sortable — outstanding balance |
+| Last Appt. | Sortable — most recent appointment |
+| Template | Template name and message type used |
+| Status | Pending, Sent, Failed, or Skipped |
+| Created | Sortable — date and time the mail record was created |
+| Created By | The user who triggered the mailer (truncated email) |
 
 ---
 
@@ -78,94 +220,63 @@ Patients without a valid phone number or email address appear here. These patien
 
 ## Overview
 
-The Schedule screen gives your team a real-time view of today's patients and tools to verify upcoming insurance eligibility. It is designed to help you prepare for each patient encounter and resolve issues before the appointment.
+The Schedule tab gives your team visibility into patients who need follow-up to get back on the books. Each view surfaces a different category of scheduling gap so you can target outreach at the right patients.
 
 ## Subtabs
 
-### Today
+### No Reappointments
 
-Displays all patients scheduled for today along with any outstanding issues that need attention before or during their appointment. Use this view to proactively identify:
+Patients who do not have a future appointment scheduled and need to be reappointed. This is the default view when you open the Schedule tab.
 
-- Outstanding balances
-- Missing demographic information
-- Insurance or payer-related errors
+### No Shows
 
-Resolving these before the patient arrives ensures a smoother experience for both staff and patients.
+Patients who missed a scheduled appointment and have not yet been rescheduled.
 
-### Insurance Eligibility
+### Reactivations
 
-Lists upcoming patients whose insurance needs to be verified for future appointments. Patients in this view typically have appointments scheduled for tomorrow or later.
+Patients who have not been seen in a significant period and need to be re-engaged to resume care.
 
-The system flags any gaps or errors that must be addressed in advance to prevent eligibility-related claim denials or day-of delays.
+### Overdue Appts
+
+Patients who are overdue for an appointment based on their treatment plan or recall schedule. This view includes an extra **Procedure** column showing the specific procedure code and description driving the overdue flag.
 
 ---
 
-## Patient Slip (Verification of Benefits)
+## Role-Based Views
 
-The Patient Slip is a comprehensive, auto-generated document accessible by clicking on any patient's name in the Schedule screen. It consolidates all critical information into a single view.
+Each Schedule view is organized into sections based on your user level:
 
-### Patient Information
-Essential demographic and contact details.
+| Section | Visible to |
+|---------|------------|
+| Office | L2, L3 and above |
+| All Patients | L1, L2, L3 |
 
-### Opal Alerts
-System-generated flags for outstanding tasks, missing information, or account issues that require staff attention.
+---
 
-### Family Members
-Linked household members for cross-referenced insurance, combined billing, or appointment coordination.
+## Table Columns
 
-### Guarantor Information
-The responsible party for the patient's financial obligations.
+### No Reappointments / No Shows / Reactivations
 
-### Billing Information
-The patient's current financial standing with the practice:
+| Column | Description |
+|--------|-------------|
+| OPALescence | Sortable — higher score = higher priority |
+| Guarantor | Responsible party and phone number |
+| Patient | Searchable by name |
+| Last Appt. | Filterable by date range — most recent appointment date |
+| History | Sortable — click to view outreach progress and task history |
+| Action | Message, Call, Override, Reassign |
 
-| Field | Description |
-|-------|-------------|
-| Last Statement Date & Amount | Most recent statement sent |
-| Last Payment Date & Amount | Most recent payment received |
-| Last Payer Paid Date & Amount | Most recent insurance payment |
-| Current Balance | Total outstanding balance |
-| Aging Buckets | >30, >60, >90, >120 days |
-| Est PT Bal | Estimated patient portion |
-| Est INS Bal | Estimated insurance portion |
+### Overdue Appts
 
-### Appointment Procedure Detail
-Procedures associated with the patient's current appointment.
-
-### Treatment Plan
-Any planned future treatments on record.
-
-### Insurance Information
-
-| Field | Description |
-|-------|-------------|
-| Insurance Name & Plan Name | Active insurance plan |
-| Group Name & Number | Group identifier |
-| Payer ID | Insurance payer identifier |
-| Insurance Address & Phone | Payer contact details |
-| Fee Schedule | Associated fee schedule |
-| Effective Dates | Coverage start and end dates |
-
-### Coverage Summary
-
-| Field | Description |
-|-------|-------------|
-| Yearly Max | Annual maximum benefit |
-| Deductibles | Individual and family deductible amounts |
-| Deductible applies to preventive/diagnostic | Yes or No |
-| Waiting Periods | Any applicable waiting periods |
-| Missing Tooth Clause | Whether the plan excludes pre-existing missing teeth |
-| Coordination of Benefits | Rules for patients with multiple insurance plans |
-
-### General Benefit Details
-Coverage breakdown by procedure category including code, description, frequency limits, coverage percentages, age limits, and historical usage.
-
-### Specialty Benefit Details
-Benefits for specialized services:
-- Endodontics
-- Periodontics
-- Oral Surgery
-- Orthodontics
+| Column | Description |
+|--------|-------------|
+| OPALescence | Sortable — higher score = higher priority |
+| Guarantor | Responsible party and phone number |
+| Patient | Searchable by name |
+| Last Appt. | Filterable by date range — most recent appointment date |
+| Procedure | Procedure code and description driving the overdue flag |
+| History | Sortable — click to view outreach progress and task history |
+| Action | Message, Call, Override, Reassign |
 
 ---
 
@@ -173,35 +284,51 @@ Benefits for specialized services:
 
 ## Overview
 
-Produce is designed to proactively generate appointments through automated patient outreach. The system handles the first three contact attempts automatically. Patients only surface in the Produce tables after automation has been exhausted and manual follow-up is required.
+Produce is designed to proactively generate appointments through automated patient outreach. The system handles the first contact attempts automatically. Patients only surface in the Produce tables after automation has been exhausted and manual follow-up is required.
 
 ## How Automation Works
 
-When a patient matches one of the Produce categories, gOS automatically sends up to three SMS messages over a defined period requesting that the patient schedule an appointment.
+When a patient matches one of the Produce categories, gOS automatically sends outreach messages over a defined period requesting that the patient schedule an appointment.
 
 - If the patient schedules during the automated sequence → no further action needed, they do not appear in the table
-- If the patient does not schedule after three messages → they escalate to the Produce table for manual follow-up
+- If the patient does not schedule after automation completes → they escalate to the Produce table for manual follow-up
 
-## Patient Categories
+## Subtabs
 
-### Broken Appointments
-Patients who missed or canceled an appointment and have not yet been rescheduled.
+### Missed Appts.
 
-### Overdue Appointments
-Patients who are past their recommended recall or follow-up window.
+Patients who missed or canceled a scheduled appointment and have not yet been rescheduled. This is the default view when you open Produce.
 
-### Unscheduled Treatment
-Patients with diagnosed treatment on record that has not been scheduled.
+### Tx Follow Up
 
-### Declined Treatment
-Patients who previously declined recommended treatment and may be eligible for re-engagement.
-
-### Reappointments
-Patients who require a future appointment based on prior visits or treatment plans.
+Patients with diagnosed treatment on record that has not been scheduled. Use this view to follow up on accepted or pending treatment plans and convert them into scheduled appointments.
 
 ---
 
-Each category allows your team to prioritize outreach based on the practice's operational goals. Higher Opalescence scores indicate higher-priority patients within each category.
+## Role-Based Views
+
+Each Produce view is organized into sections based on your user level:
+
+| Section | Visible to |
+|---------|------------|
+| Office | L2, L3 and above |
+| All Patients | L1, L2, L3 |
+
+---
+
+## Table Columns
+
+Both Produce views share the same columns:
+
+| Column | Description |
+|--------|-------------|
+| OPALescence | Sortable — higher score = higher priority |
+| Guarantor | Responsible party and phone number |
+| Patient | Searchable by name |
+| Provider | Assigned provider |
+| Last Appt. | Sortable — most recent appointment date, with days-ago indicator |
+| History | Sortable — click to view outreach progress and full task history |
+| Action | Message, Call, Override, Reassign |
 
 ---
 
@@ -329,11 +456,11 @@ Collect patients can be moved between queues using the Override action button. A
 
 ## Overview
 
-Every patient row across Collect, Produce, and Schedule includes a set of action buttons that guide your team through the correct workflow. These buttons ensure consistent, compliant, and effective outreach.
+Every patient row across Relay, Collect, Produce, and Schedule includes a set of action buttons that guide your team through the correct workflow. These buttons ensure consistent, compliant, and effective outreach.
 
 ## Action Buttons
 
-### SMS / Text
+### SMS / Text (Message)
 
 Opens a fully functional two-way chat interface with the patient.
 
@@ -346,7 +473,11 @@ Opens a fully functional two-way chat interface with the patient.
 | Message History | Infinite scroll through full conversation history |
 | Character Limit | 1,600 characters with a visible counter |
 
-### Phone / VoIP
+An unread message badge appears on the message button when the patient has replied and the message has not been read yet.
+
+---
+
+### Phone / VoIP (Call)
 
 Opens a call interface integrated directly with the GoTo Phone system.
 
@@ -356,20 +487,27 @@ Opens a call interface integrated directly with the GoTo Phone system.
 | Call History | Full log of previous call attempts |
 | Call Notes | Mandatory notes field (150-character limit) after each call |
 
+For Problem Claims, the call button opens a dropdown to choose between calling the patient/guarantor or calling the insurance company directly.
+
+---
+
 ### Task Override
 
-Removes a task from the active list. Select the reason that applies:
+Removes a task from the active list. You must select a reason. Available reasons include:
 
 | Reason | What Happens |
 |--------|-------------|
-| In Person | Patient came in to resolve the balance |
-| Mailed | Triggers a balance-due letter and statement via USPS |
+| In Person | Patient came in to resolve the issue |
+| Mailed | Triggers a balance-due letter via USPS |
 | Collections | Flags the patient for collections |
-| Write Off | Writes the balance off the patient ledger in the PMS (e.g., Dentrix) |
+| Write Off | Writes the balance off the ledger in the PMS |
+| Snooze | Temporarily hides the task for a specified number of days (up to 30) |
+
+---
 
 ### Task Reassign
 
-Escalates a task or routes it to the USPS Mailer Queue.
+Escalates a task or routes it to the USPS Mailer Queue. When reassigning, the team member must select the appropriate communication template before confirming.
 
 | Level | Can Reassign To |
 |-------|----------------|
@@ -378,23 +516,23 @@ Escalates a task or routes it to the USPS Mailer Queue.
 | L3 | Back to L1 or Mailer Queue |
 | Mailer Queue | Triggers automated USPS mail request |
 
-When reassigning, the team member must select the correct communication template before confirming.
+---
+
+### Resubmit (Problem Claims only)
+
+Available only in the **Problem Claims** view. Opens a workflow to resubmit an insurance claim that has been flagged for an issue.
 
 ---
 
 ## Patient Search
 
-A real-time patient name search is available from:
-- The **Home / Relay** screen
-- The **Patient** column in the Collect screen
+A real-time patient name search is available in:
+- The **top navigation bar** — searches across the entire platform
+- The **Patient column** in any table — filters results within that specific view
 
-## Message Notification Center
+## Message Notification
 
-Located in the top-right corner of the application. Shows a count of all unread patient messages.
-
-- Clicking the notification icon opens the Notification Center overlay
-- Each entry shows the patient name and time of the most recent message
-- Clicking **View** navigates directly to the patient's row on the relevant screen — no manual searching required
+Unread message badges appear directly on the message button in each patient row. When you have unread messages across all patients, a notification indicator appears in the top navigation.
 
 ---
 
@@ -406,7 +544,7 @@ Opalescence is OPAL gOS's built-in scoring system. It assigns points to tasks ba
 
 ## How Scores Are Calculated
 
-Each task is assigned an Opalescence score using OPAL's proprietary formula. Factors include:
+Each task is assigned an OPALescence score using OPAL's proprietary formula. Factors include:
 
 - Age of the task
 - Uncollected balance amount
@@ -415,40 +553,48 @@ Each task is assigned an Opalescence score using OPAL's proprietary formula. Fac
 - Number of times the task has been reassigned
 - Daily streaks and milestone achievements
 
-Higher scores = higher priority. A task with a high Opalescence score has greater operational or financial impact and should be addressed first.
+Higher scores = higher priority. A task with a high OPALescence score has greater operational or financial impact and should be addressed first.
 
 ## Where You See It
 
-- **Every patient row** in Collect, Produce, and Schedule tables shows the task's Opalescence score
-- **Home screen** shows your cumulative personal score
+- **Every patient row** in Collect, Produce, and Schedule tables shows the task's OPALescence score
+- **Home screen** shows your cumulative personal score and team comparisons
 
 ## Home Screen Metrics
 
 | Metric | Description |
 |--------|-------------|
-| Opalescence Score | Total points earned from all completed tasks |
-| Current Streak | Consecutive days you've earned points |
-| Month-to-Date Opalescence | Cumulative score for the current month |
-| Weekly Snapshot | Visual overview of your daily point totals for the week |
+| OPALescence Points | Your total points earned from all completed tasks |
+| Current Streak | Consecutive days you've earned points — also shows your all-time best streak |
+| Month-to-Date (MTD) Trend | Cumulative OPALescence score for the current month |
 
 ## Leaderboards
 
 | Leaderboard | Scope |
 |-------------|-------|
-| Practice Leaderboard | Rankings within your practice |
-| Global Leaderboard | Rankings across all gOS users |
+| Practice Leaderboard | Rankings within your practice (top 3 shown on home screen) |
+| Global Leaderboard | Rankings across all gOS users (top 3 shown on home screen) |
 
 Leaderboards update in real time as tasks are completed. They encourage consistent daily engagement and highlight top performers across the team.
 
 ## OPAL Rush
 
-Displayed on the Home screen. Surfaces your practice's highest-value opportunities in real time — the tasks that will earn the most points and have the greatest impact if addressed today.
+Displayed on the Home screen. Surfaces your practice's highest-value opportunities in real time — the top patients with the greatest impact if addressed today. Up to 3 patients are shown.
 
 ---
 
 # Settings
 
-Settings are available to L3 and L4 users. The Settings icon is located to the right of the Practice Selector in the top navigation.
+Settings are accessible via the gear icon in the top navigation bar. Visibility of each tab depends on your user role.
+
+| Settings Tab | Minimum Role Required |
+|-------------|----------------------|
+| General | L3 |
+| Users | L2 |
+| Schedule | L3 |
+| Produce | L3 |
+| Collect | L3 |
+| Quick Text | L3 |
 
 ---
 
@@ -460,7 +606,7 @@ Allows L3 users to manage multiple practices from a single login:
 - Switch between practices without logging out
 - Access practice-specific data, workflows, and metrics
 
-The currently active practice is always visible in the selector.
+The currently active practice is always visible in the selector. You can also search across practices by name.
 
 ---
 
@@ -482,56 +628,88 @@ Controls core system behaviors for automation, escalation, and task engagement.
 |---------|-------------|
 | Daily task requirement | Number of tasks a user must complete per day to maintain their activity streak |
 
-This setting directly affects streak-based engagement and Opalescence milestone tracking.
+This setting directly affects streak-based engagement and OPALescence milestone tracking.
 
 ---
 
 ## B. User Settings
 
-The User Management section is where authorized users create, update, and maintain user accounts.
+The User Management section is where authorized users (L2+) create, update, and maintain user accounts.
 
-- Assign roles (L1–L4) to control access and visibility
+- Search users by name
+- Filter users by role (L1, L2, L3, L4)
+- Create new users with role assignment
+- Edit existing users — update role, name, or practice associations
 - Associate users with one or multiple practices
-- Role indicators are displayed directly in the user table
+- Deactivate users when they leave
+
+Role indicators are displayed directly in the user table.
 
 ---
 
-## C. Collect Settings
+## C. Schedule Settings
+
+Configures the automated outreach workflow for each Schedule problem type. Select a problem type from the dropdown to view and edit its step configuration.
+
+**Problem types available:**
+- No Reappointments
+- No Shows
+- Reactivations
+- Overdue Appts (supports per-disposition configuration — select a disposition after choosing this type)
+
+For each problem type, you can configure the outreach timeline — which channel (SMS, Email, Mail, Call) is used at each step, and how many days after the trigger each step fires.
+
+---
+
+## D. Produce Settings
+
+Configures the automated outreach workflow for each Produce problem type. Select a problem type from the dropdown to view and edit its step configuration.
+
+Standard problem types are provided by default. You can also **create custom problem types** — up to the configured maximum — with their own name, description, procedure lookups, and outreach steps. Custom types can be edited or deleted from the same dropdown.
+
+For problem types that support it, a **Procedure Lookup** selector appears to filter the configuration to a specific procedure category.
+
+---
+
+## E. Collect Settings
 
 Configures how gOS manages patient balance follow-up communications. Defines when and through which channel patients are contacted as their balance ages.
 
-### SMS Templates
-- Up to **6 templates** configurable
-- Each template is triggered when a balance crosses a configured age threshold
-- Current day thresholds are shown clearly in the interface
+Supported outreach channels and their configuration:
 
-### Phone Call Thresholds
-- Up to **3 call attempt thresholds** configurable
-- The first call attempt triggers the automation workflow
-- Each threshold defines when a call should occur relative to task age
+| Channel | Description |
+|---------|-------------|
+| Message (SMS) | Text message templates triggered at configured day thresholds |
+| Call | Phone script steps triggered at configured day thresholds |
+| Email | Email templates triggered at configured day thresholds |
+| Mail | USPS mail templates triggered at later-stage balance age thresholds |
 
-### Email Templates
-- Up to **6 templates** configurable
-- Each triggered at a defined age milestone
-- Provides a more detailed communication option for aging balances
-
-### Mail Templates
-- Up to **2 templates** configurable
-- Reserved for later-stage collection efforts
-- Triggered at later balance age thresholds
-
-### Template Configuration
-Administrators can manage the content of templates for each channel (SMS, Phone, Email, Mail) from the Template Configuration section within Collect Settings.
+Each step in the timeline specifies the channel, the number of days after the trigger, and the message template. Steps are ordered automatically based on their day thresholds.
 
 ---
 
-## L4 User Workflow — Collections Queue
+## F. Quick Text
 
-L4 users have exclusive access to the Collections Queue, which contains accounts that have completed all outreach and escalation steps.
+Manage reusable text snippets that agents can insert when replying to patient messages in the Message Inbox.
+
+- Search quick texts by name
+- Add new quick text with a name and body
+- Edit or delete existing entries
+- List loads incrementally — scroll to load more
+
+Quick texts are available to all users when composing a message reply.
+
+---
+
+## L4 User — Collections Queue
+
+L4 users do not have access to Settings. Instead, their home screen opens directly to the **Collections Queue** — a list of accounts that have completed all outreach and escalation steps.
 
 From the Collections Queue, L4 users can:
 
 | Action | Description |
 |--------|-------------|
-| Send to Collections | Authorize the account for external collections |
-| Address Directly | Personally engage with the patient to resolve the balance, apply adjustments, or determine an alternative resolution |
+| Write Off | Check the Write Off box to mark an account as written off — a confirmation dialog appears before finalizing |
+| Download CSV | Export the full queue to a CSV file with patient details, addresses, balances, SSN, and chart numbers for external collections submission |
+
+The Collections Queue is also accessible from **Relay > Write off**.
