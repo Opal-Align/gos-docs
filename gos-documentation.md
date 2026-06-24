@@ -71,6 +71,8 @@ In addition to the four main tabs, the top bar includes:
 
 ---
 
+---
+
 # Relay
 
 ## Overview
@@ -170,6 +172,8 @@ Displays incoming appointment schedule requests from patients. Use this view to 
 
 ---
 
+---
+
 # Schedule
 
 ## Overview
@@ -238,6 +242,8 @@ Each Schedule view is organized into sections based on your user level:
 
 ---
 
+---
+
 # Produce
 
 ## Overview
@@ -294,6 +300,8 @@ Both Produce views share the same columns:
 
 ---
 
+---
+
 # Collect
 
 ## Overview
@@ -302,7 +310,7 @@ Collect organizes outstanding patient balances into focused views so your team c
 
 ## Views
 
-### Missed Collections
+### Missed OTC
 Patients who had an appointment yesterday and left with an unpaid balance. These are high-priority — timely outreach significantly increases the likelihood of successful collection.
 
 ### A/R - with Appt.
@@ -310,6 +318,9 @@ Patients who have an upcoming appointment and an outstanding balance. An ideal o
 
 ### A/R - without Appt.
 Patients who owe a balance but have no future appointment scheduled. Requires proactive outreach to resolve the balance and, when appropriate, schedule continued care.
+
+### Aged A/R
+Patients with balances that have remained outstanding over an extended period. Use this view to identify and prioritize long-standing accounts that require follow-up.
 
 ### Problem Claims
 Insurance claims that require immediate attention due to submission issues, payer rejections, missing documentation, or unsupported claim types. This view is enabled based on your practice configuration.
@@ -332,7 +343,7 @@ Within each Collect view, the patient list is organized into sections based on y
 
 Each view has specific columns tailored to its workflow.
 
-### Missed Collections
+### Missed OTC
 
 | Column | Description |
 |--------|-------------|
@@ -379,7 +390,7 @@ Each view has specific columns tailored to its workflow.
 |--------|-------------|
 | OPALescence | Sortable — higher score = higher priority |
 | Guarantor | Responsible party for the account |
-| Patient | Searchable — includes a button to open the EOB document |
+| Patient | Includes a button to open the EOB document |
 | Payor | The insurance company associated with the claim |
 | Claim Info | Sortable — claim amount and original submission date |
 | Problem | Filterable — type of issue flagging the claim |
@@ -411,10 +422,6 @@ Collect patients can be moved between queues using the Override action button. A
 | Move to Automation Queue | Return an omitted patient back to the automated outreach schedule |
 | Move to Collections Queue | Flag a patient for external collections review — reviewed and finalized by L4 users |
 | Move to Mailer | Send a patient to the USPS mail queue |
-
----
-
----
 
 ---
 
@@ -506,6 +513,8 @@ Unread message badges appear directly on the message button in each patient row.
 
 ---
 
+---
+
 # Opalescence — Scoring & Gamification
 
 ## What is Opalescence?
@@ -550,6 +559,8 @@ Leaderboards update in real time as tasks are completed. They encourage consiste
 ## OPAL Rush
 
 Displayed on the Home screen. Surfaces your practice's highest-value opportunities in real time — the top patients with the greatest impact if addressed today. Up to 3 patients are shown.
+
+---
 
 ---
 
